@@ -49,8 +49,9 @@ func runInitCommand(cmd *cobra.Command, args []string) {
 	if destDir == "" {
 		destDir = viper.GetString("directories.Data")
 	}
+	msge:= "Config file written to: " + destDir
 	logrus.Info("Writing config file to: %s", destDir)
-	feedback.Print("writing config file to :" +destDir)
+	feedback.Print(msge)
 
 	if err := os.MkdirAll(destDir, os.FileMode(0755)); err != nil {
 		feedback.Errorf("Cannot create config file directory: %v", err)
