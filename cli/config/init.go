@@ -64,7 +64,7 @@ func runInitCommand(cmd *cobra.Command, args []string) {
 		os.Exit(errorcodes.ErrGeneric)
 	}
 
-	msg := "Config file written to: " + configFile
+	msg := "Config file written to: " + destDir
 	logrus.Info(msg)
 	feedback.Print(msg)
 }
